@@ -30,8 +30,14 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
+<<<<<<< HEAD
   <!-- saifdfash -->
 
+=======
+  <?php
+  echo "test";
+  ?>
+>>>>>>> 3526468d4b97e70f7d664cdc28577efff85acc39
   <?php
     include("../../dbConnection.php");
     session_start();
