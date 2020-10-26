@@ -30,7 +30,9 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  kk
+  <?php
+  echo "test";
+  ?>
   <?php
     include("../../dbConnection.php");
     session_start();
