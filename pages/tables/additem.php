@@ -71,6 +71,7 @@ if ($uploadOk == 0) {
 	$purchasefrom = mysqli_real_escape_string($conn, $_REQUEST['pfrom']);
 		$purchasedate = mysqli_real_escape_string($conn, $_REQUEST['pdate']);
 		$purchaseprice = mysqli_real_escape_string($conn, $_REQUEST['pprice']);
+$comments = mysqli_real_escape_string($conn, $_REQUEST['comments']);
 	
 	$purchaseFromID;
 		
@@ -108,11 +109,11 @@ if ($uploadOk == 0) {
 		}
 
 
-		$sql1 = "INSERT INTO car (name, company, year,color,engine_no,chassis_no,sold,purchased_from,purchased_date,purchased_price,sold_to,sold_date,sold_price) VALUES ('$carname', '$company', '$year','$color','$engine','$chassis',1,'$purchaseFromID','$purchasedate','$purchaseprice','$soldToId','$solddate','$soldprice');";
+		$sql1 = "INSERT INTO car (name, company, year,color,engine_no,chassis_no,sold,purchased_from,purchased_date,purchased_price,sold_to,sold_date,sold_price,comments) VALUES ('$carname', '$company', '$year','$color','$engine','$chassis',1,'$purchaseFromID','$purchasedate','$purchaseprice','$soldToId','$solddate','$soldprice','$comments');";
 
 		if($purchaseFromID == Null)
 		{
-			$sql1 = "INSERT INTO car (name, company, year,color,engine_no,chassis_no,sold,sold_to,sold_date,sold_price) VALUES ('$carname', '$company', '$year','$color','$engine','$chassis',1,'$soldToId','$solddate','$soldprice');";
+			$sql1 = "INSERT INTO car (name, company, year,color,engine_no,chassis_no,sold,sold_to,sold_date,sold_price,comments) VALUES ('$carname', '$company', '$year','$color','$engine','$chassis',1,'$soldToId','$solddate','$soldprice','$comments');";
 		}
 		
 		if(mysqli_query($conn, $sql1)){
@@ -155,10 +156,10 @@ if ($uploadOk == 0) {
 	}
 	else{
 
-		$sql1 = "INSERT INTO car (name,company,year,color,engine_no,chassis_no,sold,purchased_from,purchased_date,purchased_price) VALUES ('$carname','$company','$year','$color','$engine','$chassis',0,'$purchaseFromID','$purchasedate','$purchaseprice')";
+		$sql1 = "INSERT INTO car (name,company,year,color,engine_no,chassis_no,sold,purchased_from,purchased_date,purchased_price,comments) VALUES ('$carname','$company','$year','$color','$engine','$chassis',0,'$purchaseFromID','$purchasedate','$purchaseprice','$comments')";
 		if($purchaseFromID == Null)
 		{
-			$sql1 = "INSERT INTO car (name,company,year,color,engine_no,chassis_no,sold) VALUES ('$carname','$company','$year','$color','$engine','$chassis',0)";;
+			$sql1 = "INSERT INTO car (name,company,year,color,engine_no,chassis_no,sold,comments) VALUES ('$carname','$company','$year','$color','$engine','$chassis',0,'$comments')";;
 		}
 		
 		
