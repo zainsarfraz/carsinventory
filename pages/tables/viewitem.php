@@ -37,7 +37,7 @@ session_start();
 	$id_of_car = $_GET['id'];
 	$pfrom=$pdate=$pprice=$pphone=$sto=$sdate=$sprice="Null";
 
-	$sql = "select car.name,car.company,car.year,car.color,car.engine_no,car.chassis_no,car.sold from car where car.id = '$id_of_car'";
+	$sql = "select car.name,car.company,car.year,car.color,car.engine_no,car.chassis_no,car.sold,car.comments from car where car.id = '$id_of_car'";
 	$result = mysqli_query($conn, $sql);
 
 	if (mysqli_num_rows($result) > 0) {
@@ -56,6 +56,7 @@ session_start();
 	<b><p>Car Color</p></b><p>". $row["color"]."</p>
 	<b><p>Car Engine No</p></b><p>".$row["engine_no"]."</p>
 	<b><p>Car Chassis No</p></b><p>".$row["chassis_no"]."</p>
+  <b><p>Additional Comments</p></b><p>".$row["comments"]."</p>
 	<b><p>Car Sold</p></b><p>". $row["sold"]  ."</p>
 	</div>
 	";
@@ -70,7 +71,7 @@ session_start();
 $id_of_car = $_GET['id'];
 	$pfrom=$pdate=$pprice=$pphone=$sto=$sdate=$sprice="Null";
 
-	$sql = "select person.name,car.purchased_date,car.purchased_price,person.phone from car,person where car.id = '$id_of_car' and person.id=car.purchased_from";
+	$sql = "select person.name,car.purchased_date,car.purchased_price,person.phone,car.comments from car,person where car.id = '$id_of_car' and person.id=car.purchased_from";
 	$result = mysqli_query($conn, $sql);
 
 	if (mysqli_num_rows($result) > 0) {
