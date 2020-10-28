@@ -106,6 +106,10 @@ session_start();
                     <label for="chassisNo">Car Chassis No</label>
                     <input type="text" class="form-control" id="chassisNo" placeholder="Enter Car Chassis No" required="" name="chassis">
                   </div>
+                    <div class="form-group">
+                    <label for="comments">Additional Comments</label>
+                    <input type="text" class="form-control" id="comments" placeholder="Enter Comments about car" required="" name="comments">
+                  </div>
 
 
                  <!--  <div class="form-group" id="img">
